@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="jumbotron text-center jumbotron-fluid">
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Saved</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        This article has been saved into the DB
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{#each dbArticle}}
+            <div class="card">
+                <h5 class="card-header"></h5>
+                <div class="card-body">
+                    <h5 class="card-title">{{this.title}}</h5>
+                    <p class="card-text">{{this.content}}</p>
+                    <a href={{this.link}} class="btn btn-primary" target="_blank">Go to article</a>
+                    <button type="button" class="btn btn-primary ml-3 saveButton" data-id={{this._id}}>Save article</button>                    
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
