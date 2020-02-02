@@ -39,7 +39,7 @@ app.set("view engine", "handlebars");
 //Functions
 const renderMain = function(reqq,ress){
     db.Article.find({})
-    .sort({createdAt: -1})
+    .sort({createdAt: 1})
     .then(function(dbArticle) {
       ress.render("articles",{dbArticle, helpers:{
         stringit: function(expression){
